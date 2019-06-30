@@ -16,6 +16,7 @@ class search_Bufferover(object):
                 browser = await launch({'args':['--no-sandbox']})
                 page = await browser.newPage()
                 await page.goto('{0}'.format(url))
+                await asyncio.sleep(5)
                 content = await page.content()
                 Json_data = json.loads(content[84:-20])
                 Json_data_A = Json_data['FDNS_A']
